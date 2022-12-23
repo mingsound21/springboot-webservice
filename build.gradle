@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.6.2'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+sourceCompatibility = '11'
+
+// repositories : 각종 의존성(라이브러리)들 어떤 원격 저장소에서 받을지 결정
+repositories {
+    mavenCentral()// mavenCentral : 기본적으로 많이 사용. 개발자가 직접 만든 라이브러리 업로드가 힘듦.
+    jcenter() // jcenter : mavenCentral의 문제점 개선해 라이브러리 업로드 간단하게 할 수 있도록
+}
+
+// 필요한 의존성 선언
+// 특정 버전 명시 X, 그래야 위에서 선언한 springBootVersion을 따라감
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+test {
+    useJUnitPlatform()
+}
