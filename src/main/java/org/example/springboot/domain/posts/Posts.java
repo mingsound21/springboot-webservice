@@ -4,13 +4,14 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.example.springboot.domain.BaseTimeEntity;
 
 import javax.persistence.*;
 
 @Getter // 롬복
 @NoArgsConstructor(access = AccessLevel.PROTECTED) // 롬복
 @Entity // JPA - 테이블과 매핑될 클래스(기본 이름 규칙: 자바-카멜(StudentTable) -> DB-언더스코어(student_table))
-public class Posts { // 실제 DB의 테이블과 매칭
+public class Posts  extends BaseTimeEntity { // 실제 DB의 테이블과 매칭
 
     @Id // pk
     @GeneratedValue(strategy = GenerationType.IDENTITY) // pk 생성 규칙, 스프링부트 2.0에서는 GenerationType.IDENTITY추가해야 auto_increment
