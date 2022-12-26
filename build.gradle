@@ -30,6 +30,9 @@ dependencies {
 
     // h2
     runtimeOnly 'com.h2database:h2'
+
+    // 머스테치
+    implementation 'org.springframework.boot:spring-boot-starter-mustache'
 }
 
 test {
