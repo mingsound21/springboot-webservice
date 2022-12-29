@@ -19,6 +19,7 @@ var main = {
             author: $('#author').val(),
             content: $('#content').val()
         };
+        console.log(data);
 
         $.ajax({
             type: 'POST',
